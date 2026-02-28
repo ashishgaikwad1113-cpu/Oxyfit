@@ -1,4 +1,3 @@
-/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +5,15 @@
     font-family: Arial, sans-serif;
 }
 
-/* HEADER & NAVBAR */
 header {
     background: #0077b6;
-    padding: 15px 50px;
+    padding: 15px 40px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .logo-box {
@@ -25,19 +22,21 @@ nav {
 }
 
 .logo-box img {
-    width: 50px;
-    margin-right: 15px;
+    width: 45px;
+    margin-right: 10px;
 }
 
 nav h1 {
     color: white;
-    font-size: 26px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
@@ -46,93 +45,60 @@ nav ul li a {
     font-weight: bold;
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
-}
-
-/* HERO */
 .hero {
-    min-height: 80vh;
+    height: 90vh;
     background: #caf0f8;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 20px;
 }
 
 .hero h2 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
 .btn {
     background: #0096c7;
     color: white;
-    padding: 15px 30px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
+    margin-top: 15px;
 }
 
-/* SECTIONS */
 .section {
-    padding: 80px 60px;
+    padding: 60px 40px;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.section p {
-    font-size: 18px;
-    line-height: 1.6;
 }
 
 .light {
     background: #f4f4f4;
 }
 
-/* PRODUCT CARDS */
 .cards {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
     justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transition: 0.4s;
-    width: 280px;
+    animation: fadeUp 1s ease;
+    width: 250px;
 }
 
-.card h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-.card p {
-    font-size: 16px;
-    margin-bottom: 12px;
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 
 .card img {
@@ -141,42 +107,50 @@ nav ul li a {
     display: block;
 }
 
-/* MANUFACTURING SECTION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .mainbox {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    background-color: rgb(69, 146, 146);
+    padding: 20px 0;
 }
 
-.mainbox div {
+#box1, #box2, #box3, #box4 {
+    background-color: #f4f4f4;
+    height: 300px;
+    width: 300px;
+    display: inline-block;
+}
+
+#box1 img, #box2 img, #box3 img, #box4 img {
     width: 100%;
-    max-width: 320px;
+    height: 100%;
+    object-fit: cover;
 }
 
-.mainbox div img {
-    width: 100%;
-    height: auto;
+.map {
+    margin-top: 20px;
 }
 
-/* MAP */
-.map iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 350px;
-    border: 0;
-}
-
-/* FOOTER */
 footer {
     background: #023e8a;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
-/* WHATSAPP BUTTON */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -190,71 +164,23 @@ footer {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp {
-    from {opacity:0; transform:translateY(40px);}
-    to {opacity:1; transform:translateY(0);}
+#home {
+    height: 300px;
+    background-image: url(./background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-/* RESPONSIVE: TABLETS */
-@media (max-width: 1024px) {
-    .hero h2 {
-        font-size: 40px;
-    }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .btn {
-        padding: 12px 25px;
-        font-size: 16px;
-    }
-
-    .section h2 {
-        font-size: 32px;
-    }
-
-    .section p {
-        font-size: 16px;
-    }
-
-    .card {
-        width: 240px;
-    }
-
-    .mainbox div {
-        max-width: 280px;
-    }
-
-    .map iframe {
-        max-width: 500px;
-        height: 300px;
-    }
-}
-
-/* RESPONSIVE: MOBILE */
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
     nav ul {
         flex-direction: column;
-        width: 100%;
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .hero h2 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
     }
 
     .cards {
@@ -262,47 +188,21 @@ footer {
         align-items: center;
     }
 
-    .mainbox {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    nav h1 {
-        font-size: 20px;
-    }
-
     .hero h2 {
         font-size: 24px;
     }
 
-    .hero p {
-        font-size: 14px;
+    .section {
+        padding: 40px 20px;
     }
 
-    .btn {
-        padding: 10px 20px;
-        font-size: 14px;
+    .mainbox {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .card {
+    #box1, #box2, #box3, #box4 {
         width: 90%;
-    }
-
-    .mainbox div {
-        width: 90%;
-    }
-
-    .section h2 {
-        font-size: 22px;
-    }
-
-    .section p {
-        font-size: 14px;
-    }
-
-    .map iframe {
-        height: 200px;
+        height: auto;
     }
 }
